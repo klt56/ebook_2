@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TestEBook7</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://js.stripe.com/v3/"></script>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_importmap_tags %>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="../style/bootswatch.css">
+
+
+  </head>
+
+  <body>
+
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a><%= link_to 'connexion',  user_session_path, :class => "nav-link", style: "color:white"  %></a>
+  </li>
+  <li class="nav-item">
+    <a><%= link_to 'nous rejoindre', new_user_registration_path, :class => "nav-link", style: "color:white"  %></a>
+  </li>
+  <li class="nav-item">
+    
+  </li>
+  <li class="nav-item">
+   <a><%= link_to 'se deconnecter',  destroy_user_session_path, :class => "nav-link", style: "color:white"  %></a>
+  </li>
+</ul>
+    <%= yield %>
+    
+  </body>
+</html>

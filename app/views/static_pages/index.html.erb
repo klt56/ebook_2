@@ -1,0 +1,114 @@
+<br><center><h1> <p style="color:white";><i>Notre boutique en ligne</i></p></h1></center>
+<br>
+<br>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://cdn.pixabay.com/photo/2016/03/18/15/02/ufo-1265186_1280.jpg" class="card-img-top" alt="Image" height="300" width="300">
+      <div class="card-body">
+        <h5 class="card-title"><h1><i>science fiction</i></h1></h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://static.actu.fr/uploads/2014/12/Jean-jacques-Banide-livres-et-arme-%C2%A9-quimper-communaute3575.jpg" class="card-img-top" alt="Image" height="300" width="300">
+      <div class="card-body">
+        <h5 class="card-title"><h1><i>policier</i></h1></h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://cdn.pixabay.com/photo/2018/01/21/01/46/architecture-3095716_1280.jpg" class="card-img-top" alt="Image" height="300" width="300">
+      <div class="card-body">
+        <h5 class="card-title"><h1><i>conte</i></h1></h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://cdn.pixabay.com/photo/2015/11/19/21/11/atlas-1052011_1280.jpg" class="card-img-top" alt="Image" height="300" width="300">
+      <div class="card-body">
+        <h5 class="card-title"><h1><i>éducation</i></h1></h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://cdn.pixabay.com/photo/2015/05/07/15/48/bustos-756620_1280.jpg" class="card-img-top" alt="Image" height="300" width="300">
+      <div class="card-body">
+        <h5 class="card-title"><h1><i>philosophy</i></h1></h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://cdn.pixabay.com/photo/2017/07/22/11/46/adventure-2528477_1280.jpg" class="card-img-top" alt="Image" height="300" width="300">
+      <div class="card-body">
+        <h5 class="card-title"><h1><i>aventure</i></h1></h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<center>
+      <% if user_signed_in? %>
+        <li>
+          <i><%= link_to "Se déconnecter", destroy_user_session_path, style: "color:brown", method: :delete %></i>
+        </li>
+
+        <li>
+          Voici ton email : <%= current_user.email %>
+        </li>
+
+        <li>
+         <i><%= link_to  "Nos abonments", static_pages_secret_path, style: "color:brown"%></i>
+        </li>
+
+        <li>
+          <i><%= link_to "Edit email / password", edit_user_registration_path, style: "color:brown" %></i>
+        </li>
+
+      <% else %>
+        <li>    
+         <i> <%= link_to "connexion", new_user_session_path, style: "color:white" %></i>
+        </li>
+
+        <li>
+          <i><%= link_to "S'inscrire", new_user_registration_path, style: "color:white"%></i>
+        </li>
+
+      <% end %>
+    </ul></center>
+   <center><a><%= button_to "abonnement (NEXT GEN)", checkout_create_path(total: 9.99), class: "btn btn-light", style: "color:brown", remote: true %></a></center>
+    
